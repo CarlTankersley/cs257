@@ -1,0 +1,31 @@
+Name
+
+books.py
+
+Synopsis
+
+books.py [OPTION]... 
+
+Description
+
+Searches through the list of books in books.csv and displays them in an input-determined order.
+
+--title -t STRING
+	Displays a list of books whose titles contain the specified string (case-insensitive)
+		--sort -s [STRING=title] 
+		Sets the sort parameter for the list of books. Options: 'title', 'year'
+
+--author -a STRING
+	Displays a list of books whose authors contain the specified string in alphabetical order by surname
+
+--year -y [STARTING_YEAR] [ENDING_YEAR]
+	Displays a list of books published between the starting and ending years, inclusive, ordered by publication
+	year. If ENDING_YEAR is unspecified, default to STARTING_YEAR. If no years are specified, displays all books,
+	sorted by year of publication.
+
+--help -h
+	Displays this usage statement
+
+Authors
+	AJ Ristino and Carl Tankersley
+
