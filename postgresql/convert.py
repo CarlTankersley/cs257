@@ -49,7 +49,7 @@ with open("data/athletes.csv", 'w') as file:
     writer = csv.writer(file)
     id = 0
     for row in athletes_rows:
-        if row == athletes_rows[0]:
+        if row == athletes_rows[0]: # ignore column headers
             continue
         writer.writerow([id] + row)
         id += 1
@@ -82,14 +82,14 @@ with open("data/medals.csv", 'w') as file:
         writer.writerow([id] + [row])
         id += 1
 
-# with open("data/teams.csv", 'w') as file:
-#     writer = csv.writer(file)
-#     id = 0
-#     for row in teams_rows:
-#         if row == teams_rows[0]:
-#             continue
-#         writer.writerow([id] + row)
-#         id += 1
+with open("data/teams.csv", 'w') as file:
+    writer = csv.writer(file)
+    id = 0
+    for row in teams_rows:
+        if row == teams_rows[0]:
+            continue
+        writer.writerow([id] + row)
+        id += 1
 
 # Making dictionaries with keys being fields from the csv, and values being the corresponding ID
 with open("data/athletes.csv") as athletes:
@@ -131,7 +131,7 @@ with open("archive/athlete_events.csv") as source_file, open("data/links.csv", '
     reader = csv.reader(source_file)
     writer = csv.writer(destination_file)
     for line in reader:
-        if line[0] == 'ID':
+        if line[0] == 'ID': # Ignore column headers
             continue
         athlete_id = athletes_dict[line[1]]
         event_id = events_dict[line[13]]
