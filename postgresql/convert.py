@@ -127,6 +127,7 @@ with open("data/teams.csv") as teams:
         if line[1] not in teams_dict.keys():
             teams_dict[line[1]] = line[0]
 
+# Make linking table csv file
 with open("archive/athlete_events.csv") as source_file, open("data/links.csv", 'w') as destination_file:
     reader = csv.reader(source_file)
     writer = csv.writer(destination_file)

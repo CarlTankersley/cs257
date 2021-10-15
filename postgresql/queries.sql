@@ -24,3 +24,6 @@ AND links.games_id = games.id
 AND links.event_id = events.id
 GROUP BY teams.noc
 ORDER BY COUNT(medals.medal) DESC;
+-- This one was a pain, since I realized I was initially 
+-- double counting medals won in team events, but I think
+-- I've finally got it
