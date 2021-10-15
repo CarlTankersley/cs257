@@ -15,7 +15,7 @@ AND links.medal_id = medals.id
 AND medals.medal IS NOT NULL
 ORDER BY games.year;
 
-SELECT teams.noc, COUNT(DISTINCT (events.event, games.year)) gold_medals
+SELECT teams.noc, COUNT(DISTINCT (events.event, events.sport, games.year)) gold_medals
 FROM teams, medals, links, events, games
 WHERE medals.medal = 'Gold'
 AND links.medal_id = medals.id
@@ -23,7 +23,7 @@ AND links.team_id = teams.id
 AND links.games_id = games.id
 AND links.event_id = events.id
 GROUP BY teams.noc
-ORDER BY COUNT(medals.medal) DESC;
+ORDER BY gold_medals DESC;
 -- This one was a pain, since I realized I was initially 
 -- double counting medals won in team events, but I think
 -- I've finally got it
