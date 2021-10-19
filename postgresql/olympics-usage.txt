@@ -1,0 +1,26 @@
+NAME
+    olympics.py
+
+SYNOPSIS
+    python3 olympics.py [OPTION]
+    python3 olympics.py -a <NOC>
+
+DESCRIPTION
+    Query the olympics database and print the requested information
+
+    -a, --athletes-from-NOC <NOC>
+        Print a list of athletes competing under the specified NOC sorted alphabetically
+
+    -g, --gold-medals
+        Print a list of all NOCs that have won at least one gold medal and the number of medals they have won
+        in descending order of number of gold medals won 
+
+    -m, --medalists
+        Print a list of all athletes who have won a medal and the number of gold, silver, bronze, and total 
+        medals that they have won in descending order of total number of medals 
+
+    -h, --help
+        Display this help file
+
+AUTHOR
+    Written by Carl Tankersley using as an example code written by Jeff Ondich
