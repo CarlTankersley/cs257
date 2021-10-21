@@ -1,5 +1,4 @@
 config.py
 **/__pycache__/
 postgresql/temp.sql
-postgresql/olympics.sql
-
+postgresql/archive/

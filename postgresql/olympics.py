@@ -9,15 +9,15 @@ import psycopg2
 import argparse
 from config import database, user, password
 from signal import signal, SIGPIPE, SIG_DFL
-
-signal(SIGPIPE, SIG_DFL) # avoids broken pipe errors when output is piped into less, as in olympics.sh
+# Avoids broken pipe errors when piping output into less, which is helpful when printing thousands of lines at a time
+signal(SIGPIPE, SIG_DFL) 
 
 def parse_args():
     parser = argparse.ArgumentParser(add_help=False)
     parser.add_argument("-h", "--help", action='store_true')
     parser.add_argument("-a", "--athletes-from-noc", metavar='athletes', dest='athletes', nargs=1, type=str)
     parser.add_argument("-g", "--gold-medals", dest='gold', action='store_true')
-    parser.add_argument("-m", "--medalists", action='store_true')
+    parser.add_argument("-m", "--medalists", nargs=1, type=str)
     return parser.parse_args()
 
 def main():
@@ -32,7 +32,7 @@ def main():
         rows = format_gold(result)
         print_rows(rows)
     elif args.medalists:
-        result = query_medalists(cursor)
+        result = query_medalists(cursor, args.medalists)
         rows = format_medalists(result)
         print_rows(rows)
     else:
@@ -79,10 +79,35 @@ def query_gold(cursor):
         exit()
     return cursor
 
-def query_medalists(cursor):
-    #TODO: Figure out what's going on with this
-    
-    query = '''SELECT some_shit FROM somewhere'''
+def query_medalists(cursor, noc):
+    #Thank you to Dave Musicant, who helped me figure this monstrosity out
+    query = '''SELECT DISTINCT athletes.name, Gold, Silver, Bronze, COALESCE(Gold, 0) + COALESCE(Silver, 0) + COALESCE(Bronze, 0) AS Total
+               FROM teams, links, (athletes
+               LEFT JOIN (SELECT links.athlete_id AS athlete_id, COUNT(links.medal_id) AS Bronze
+                   FROM links, medals
+                   WHERE medals.medal = 'Bronze'
+                   AND links.medal_id = medals.id
+                   GROUP BY links.athlete_id) bronze_count ON athletes.id = bronze_count.athlete_id
+               LEFT JOIN (SELECT links.athlete_id AS athlete_id, COUNT(links.medal_id) AS Silver
+                   FROM links, medals
+                   WHERE medals.medal = 'Silver'
+                   AND links.medal_id = medals.id
+                   GROUP BY links.athlete_id) silver_count ON athletes.id = silver_count.athlete_id
+               LEFT JOIN (SELECT links.athlete_id AS athlete_id, COUNT(links.medal_id) AS Gold
+                   FROM links, medals
+                   WHERE medals.medal = 'Gold'
+                   AND links.medal_id = medals.id
+                   GROUP BY links.athlete_id) gold_count ON athletes.id = gold_count.athlete_id)
+               WHERE links.team_id = teams.id
+               AND links.athlete_id = athletes.id
+               AND teams.noc = %s
+               ORDER BY Total DESC'''
+    try:
+        cursor.execute(query, noc)
+    except Exception as e:
+        print(e)
+        exit()
+    return cursor
 
 def format_athletes(rows):
     rows_formatted = []
@@ -97,9 +122,25 @@ def format_gold(rows):
         rows_formatted.append(row_string)
     return rows_formatted
 
-def format_medalists(rows):
-    #TODO: implement this once the query is figured out
-    pass
+def format_medalists(cursor):
+    max_length = 0
+    lines = []
+    rows = []
+    for row in cursor:
+        rows.append(list(row))
+        if len(row[0]) > max_length:
+            max_length = len(row[0])
+    lines.append('Athlete' + ' '*(max_length-7) + ' |  Gold  | Silver | Bronze | Total')
+    lines.append('-'*max_length + '-+--------+--------+--------+-------')
+    for row in rows:
+        spaces = max_length - len(row[0])
+        for elt in range(len(row)):
+            row[elt] = row[elt] or 0
+        gold_space = 1 if row[1] // 10 > 0 else 2
+        # This ugly mess adds spaces so that everything lines up nicely in the output
+        lines.append(row[0] + ' '*spaces + ' |   ' + str(row[1]) + ' '*gold_space + '  |   ' \
+                     + str(row[2]) + '    |   ' + str(row[3]) + '    |   ' + str(row[4]))
+    return lines
 
 def print_help():
     with open('olympics-usage.txt') as help_file:
