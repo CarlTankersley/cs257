@@ -133,13 +133,17 @@ def format_medalists(cursor):
     lines.append('Athlete' + ' '*(max_length-7) + ' |  Gold  | Silver | Bronze | Total')
     lines.append('-'*max_length + '-+--------+--------+--------+-------')
     for row in rows:
+        if row[4] == 0: # Don't print out athletes that didn't win any medals
+            break
         spaces = max_length - len(row[0])
-        for elt in range(len(row)):
+        for elt in range(len(row)): # Replace null values with 0
             row[elt] = row[elt] or 0
-        gold_space = 1 if row[1] // 10 > 0 else 2
-        # This ugly mess adds spaces so that everything lines up nicely in the output
-        lines.append(row[0] + ' '*spaces + ' |   ' + str(row[1]) + ' '*gold_space + '  |   ' \
-                     + str(row[2]) + '    |   ' + str(row[3]) + '    |   ' + str(row[4]))
+        gold_space = 0 if row[1] // 10 > 0 else 1 # Make space for a second digit
+        line_string = row[0] + ' '*spaces + ' |   '
+        line_string += str(row[1]) + ' '*gold_space + '   |   '
+        line_string += str(row[2]) + '    |   '
+        line_string += str(row[3]) + '    |   ' + str(row[4])
+        lines.append(line_string)
     return lines
 
 def print_help():
