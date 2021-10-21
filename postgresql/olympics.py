@@ -139,11 +139,11 @@ def format_medalists(cursor):
         for elt in range(len(row)): # Replace null values with 0
             row[elt] = row[elt] or 0
         gold_space = 0 if row[1] // 10 > 0 else 1 # Make space for a second digit
-        line_string = row[0] + ' '*spaces + ' |   '
-        line_string += str(row[1]) + ' '*gold_space + '   |   '
-        line_string += str(row[2]) + '    |   '
-        line_string += str(row[3]) + '    |   ' + str(row[4])
-        lines.append(line_string)
+        line = row[0] + ' '*spaces + ' |   '
+        line += str(row[1]) + ' '*gold_space + '   |   '
+        line += str(row[2]) + '    |   '
+        line += str(row[3]) + '    |   ' + str(row[4])
+        lines.append(line)
     return lines
 
 def print_help():
