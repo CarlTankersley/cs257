@@ -109,15 +109,15 @@ def query_medalists(cursor, noc):
         exit()
     return cursor
 
-def format_athletes(rows):
+def format_athletes(cursor):
     rows_formatted = []
-    for row in rows:
+    for row in cursor:
         rows_formatted.append(row[0])
     return rows_formatted
 
-def format_gold(rows):
-    rows_formatted = ['NOC | Gold Medals', '-----------------']
-    for row in rows:
+def format_gold(cursor):
+    rows_formatted = ['NOC | Gold Medals', '----+------------']
+    for row in cursor:
         row_string = row[0] + ' | ' + str(row[1])
         rows_formatted.append(row_string)
     return rows_formatted
