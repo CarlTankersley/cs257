@@ -1,0 +1,832 @@
+[
+    {
+        "infinitive": "manger",
+        "conjugations": [
+            {
+                "surfaceform": "manger",
+                "partofspeech": {
+                    "partofspeechcategory": "verb",
+                    "tense": "infinitive"
+                }
+            },
+            {
+                "surfaceform": "mangeant",
+                "partofspeech": {
+                    "partofspeechcategory": "verb",
+                    "tense": "presentparticiple"
+                }
+            },
+            {
+                "surfaceform": "mang\u00e9",
+                "partofspeech": {
+                    "partofspeechcategory": "verb",
+                    "tense": "pastparticiplemasculinesingular"
+                }
+            },
+            {
+                "surfaceform": "mang\u00e9s",
+                "partofspeech": {
+                    "partofspeechcategory": "verb",
+                    "tense": "pastparticiplemasculineplural"
+                }
+            },
+            {
+                "surfaceform": "mang\u00e9e",
+                "partofspeech": {
+                    "partofspeechcategory": "verb",
+                    "tense": "pastparticiplefemininesingular"
+                }
+            },
+            {
+                "surfaceform": "mang\u00e9es",
+                "partofspeech": {
+                    "partofspeechcategory": "verb",
+                    "tense": "pastparticiplefeminineplural"
+                }
+            },
+            {
+                "surfaceform": "mange",
+                "partofspeech": {
+                    "partofspeechcategory": "verb",
+                    "tense": "present",
+                    "person": "first",
+                    "number": "singular"
+                }
+            },
+            {
+                "surfaceform": "manges",
+                "partofspeech": {
+                    "partofspeechcategory": "verb",
+                    "tense": "present",
+                    "person": "second",
+                    "number": "singular"
+                }
+            },
+            {
+                "surfaceform": "mange",
+                "partofspeech": {
+                    "partofspeechcategory": "verb",
+                    "tense": "present",
+                    "person": "third",
+                    "number": "singular"
+                }
+            },
+            {
+                "surfaceform": "mangeons",
+                "partofspeech": {
+                    "partofspeechcategory": "verb",
+                    "tense": "present",
+                    "person": "first",
+                    "number": "plural"
+                }
+            },
+            {
+                "surfaceform": "mangez",
+                "partofspeech": {
+                    "partofspeechcategory": "verb",
+                    "tense": "present",
+                    "person": "second",
+                    "number": "plural"
+                }
+            },
+            {
+                "surfaceform": "mangent",
+                "partofspeech": {
+                    "partofspeechcategory": "verb",
+                    "tense": "present",
+                    "person": "third",
+                    "number": "plural"
+                }
+            },
+            {
+                "surfaceform": "mangerai",
+                "partofspeech": {
+                    "partofspeechcategory": "verb",
+                    "tense": "future",
+                    "person": "first",
+                    "number": "singular"
+                }
+            },
+            {
+                "surfaceform": "mangeras",
+                "partofspeech": {
+                    "partofspeechcategory": "verb",
+                    "tense": "future",
+                    "person": "second",
+                    "number": "singular"
+                }
+            },
+            {
+                "surfaceform": "mangera",
+                "partofspeech": {
+                    "partofspeechcategory": "verb",
+                    "tense": "future",
+                    "person": "third",
+                    "number": "singular"
+                }
+            },
+            {
+                "surfaceform": "mangerons",
+                "partofspeech": {
+                    "partofspeechcategory": "verb",
+                    "tense": "future",
+                    "person": "first",
+                    "number": "plural"
+                }
+            },
+            {
+                "surfaceform": "mangerez",
+                "partofspeech": {
+                    "partofspeechcategory": "verb",
+                    "tense": "future",
+                    "person": "second",
+                    "number": "plural"
+                }
+            },
+            {
+                "surfaceform": "mangeront",
+                "partofspeech": {
+                    "partofspeechcategory": "verb",
+                    "tense": "future",
+                    "person": "third",
+                    "number": "plural"
+                }
+            },
+            {
+                "surfaceform": "aurai mang\u00e9",
+                "partofspeech": {
+                    "partofspeechcategory": "verb",
+                    "tense": "futureperfect",
+                    "person": "first",
+                    "number": "singular"
+                }
+            },
+            {
+                "surfaceform": "auras mang\u00e9",
+                "partofspeech": {
+                    "partofspeechcategory": "verb",
+                    "tense": "futureperfect",
+                    "person": "second",
+                    "number": "singular"
+                }
+            },
+            {
+                "surfaceform": "aura mang\u00e9",
+                "partofspeech": {
+                    "partofspeechcategory": "verb",
+                    "tense": "futureperfect",
+                    "person": "third",
+                    "number": "singular"
+                }
+            },
+            {
+                "surfaceform": "aurons mang\u00e9",
+                "partofspeech": {
+                    "partofspeechcategory": "verb",
+                    "tense": "futureperfect",
+                    "person": "first",
+                    "number": "plural"
+                }
+            },
+            {
+                "surfaceform": "aurez mang\u00e9",
+                "partofspeech": {
+                    "partofspeechcategory": "verb",
+                    "tense": "futureperfect",
+                    "person": "second",
+                    "number": "plural"
+                }
+            },
+            {
+                "surfaceform": "auront mang\u00e9",
+                "partofspeech": {
+                    "partofspeechcategory": "verb",
+                    "tense": "futureperfect",
+                    "person": "third",
+                    "number": "plural"
+                }
+            },
+            {
+                "surfaceform": "mangeais",
+                "partofspeech": {
+                    "partofspeechcategory": "verb",
+                    "tense": "imperfect",
+                    "person": "first",
+                    "number": "singular"
+                }
+            },
+            {
+                "surfaceform": "mangeais",
+                "partofspeech": {
+                    "partofspeechcategory": "verb",
+                    "tense": "imperfect",
+                    "person": "second",
+                    "number": "singular"
+                }
+            },
+            {
+                "surfaceform": "mangeait",
+                "partofspeech": {
+                    "partofspeechcategory": "verb",
+                    "tense": "imperfect",
+                    "person": "third",
+                    "number": "singular"
+                }
+            },
+            {
+                "surfaceform": "mangions",
+                "partofspeech": {
+                    "partofspeechcategory": "verb",
+                    "tense": "imperfect",
+                    "person": "first",
+                    "number": "plural"
+                }
+            },
+            {
+                "surfaceform": "mangiez",
+                "partofspeech": {
+                    "partofspeechcategory": "verb",
+                    "tense": "imperfect",
+                    "person": "second",
+                    "number": "plural"
+                }
+            },
+            {
+                "surfaceform": "mangeaient",
+                "partofspeech": {
+                    "partofspeechcategory": "verb",
+                    "tense": "imperfect",
+                    "person": "third",
+                    "number": "plural"
+                }
+            },
+            {
+                "surfaceform": "ai mang\u00e9",
+                "partofspeech": {
+                    "partofspeechcategory": "verb",
+                    "tense": "presentperfect",
+                    "person": "first",
+                    "number": "singular"
+                }
+            },
+            {
+                "surfaceform": "as mang\u00e9",
+                "partofspeech": {
+                    "partofspeechcategory": "verb",
+                    "tense": "presentperfect",
+                    "person": "second",
+                    "number": "singular"
+                }
+            },
+            {
+                "surfaceform": "a mang\u00e9",
+                "partofspeech": {
+                    "partofspeechcategory": "verb",
+                    "tense": "presentperfect",
+                    "person": "third",
+                    "number": "singular"
+                }
+            },
+            {
+                "surfaceform": "avons mang\u00e9",
+                "partofspeech": {
+                    "partofspeechcategory": "verb",
+                    "tense": "presentperfect",
+                    "person": "first",
+                    "number": "plural"
+                }
+            },
+            {
+                "surfaceform": "avez mang\u00e9",
+                "partofspeech": {
+                    "partofspeechcategory": "verb",
+                    "tense": "presentperfect",
+                    "person": "second",
+                    "number": "plural"
+                }
+            },
+            {
+                "surfaceform": "ont mang\u00e9",
+                "partofspeech": {
+                    "partofspeechcategory": "verb",
+                    "tense": "presentperfect",
+                    "person": "third",
+                    "number": "plural"
+                }
+            },
+            {
+                "surfaceform": "avais mang\u00e9",
+                "partofspeech": {
+                    "partofspeechcategory": "verb",
+                    "tense": "pastperfect",
+                    "person": "first",
+                    "number": "singular"
+                }
+            },
+            {
+                "surfaceform": "avais mang\u00e9",
+                "partofspeech": {
+                    "partofspeechcategory": "verb",
+                    "tense": "pastperfect",
+                    "person": "second",
+                    "number": "singular"
+                }
+            },
+            {
+                "surfaceform": "avait mang\u00e9",
+                "partofspeech": {
+                    "partofspeechcategory": "verb",
+                    "tense": "pastperfect",
+                    "person": "third",
+                    "number": "singular"
+                }
+            },
+            {
+                "surfaceform": "avions mang\u00e9",
+                "partofspeech": {
+                    "partofspeechcategory": "verb",
+                    "tense": "pastperfect",
+                    "person": "first",
+                    "number": "plural"
+                }
+            },
+            {
+                "surfaceform": "aviez mang\u00e9",
+                "partofspeech": {
+                    "partofspeechcategory": "verb",
+                    "tense": "pastperfect",
+                    "person": "second",
+                    "number": "plural"
+                }
+            },
+            {
+                "surfaceform": "avaient mang\u00e9",
+                "partofspeech": {
+                    "partofspeechcategory": "verb",
+                    "tense": "pastperfect",
+                    "person": "third",
+                    "number": "plural"
+                }
+            },
+            {
+                "surfaceform": "mangeai",
+                "partofspeech": {
+                    "partofspeechcategory": "verb",
+                    "tense": "past",
+                    "person": "first",
+                    "number": "singular"
+                }
+            },
+            {
+                "surfaceform": "mangeas",
+                "partofspeech": {
+                    "partofspeechcategory": "verb",
+                    "tense": "past",
+                    "person": "second",
+                    "number": "singular"
+                }
+            },
+            {
+                "surfaceform": "mangea",
+                "partofspeech": {
+                    "partofspeechcategory": "verb",
+                    "tense": "past",
+                    "person": "third",
+                    "number": "singular"
+                }
+            },
+            {
+                "surfaceform": "mange\u00e2mes",
+                "partofspeech": {
+                    "partofspeechcategory": "verb",
+                    "tense": "past",
+                    "person": "first",
+                    "number": "plural"
+                }
+            },
+            {
+                "surfaceform": "mange\u00e2tes",
+                "partofspeech": {
+                    "partofspeechcategory": "verb",
+                    "tense": "past",
+                    "person": "second",
+                    "number": "plural"
+                }
+            },
+            {
+                "surfaceform": "mang\u00e8rent",
+                "partofspeech": {
+                    "partofspeechcategory": "verb",
+                    "tense": "past",
+                    "person": "third",
+                    "number": "plural"
+                }
+            },
+            {
+                "surfaceform": "eus mang\u00e9",
+                "partofspeech": {
+                    "partofspeechcategory": "verb",
+                    "tense": "pastanterior",
+                    "person": "first",
+                    "number": "singular"
+                }
+            },
+            {
+                "surfaceform": "eus mang\u00e9",
+                "partofspeech": {
+                    "partofspeechcategory": "verb",
+                    "tense": "pastanterior",
+                    "person": "second",
+                    "number": "singular"
+                }
+            },
+            {
+                "surfaceform": "eut mang\u00e9",
+                "partofspeech": {
+                    "partofspeechcategory": "verb",
+                    "tense": "pastanterior",
+                    "person": "third",
+                    "number": "singular"
+                }
+            },
+            {
+                "surfaceform": "e\u00fbmes mang\u00e9",
+                "partofspeech": {
+                    "partofspeechcategory": "verb",
+                    "tense": "pastanterior",
+                    "person": "first",
+                    "number": "plural"
+                }
+            },
+            {
+                "surfaceform": "e\u00fbtes mang\u00e9",
+                "partofspeech": {
+                    "partofspeechcategory": "verb",
+                    "tense": "pastanterior",
+                    "person": "second",
+                    "number": "plural"
+                }
+            },
+            {
+                "surfaceform": "eurent mang\u00e9",
+                "partofspeech": {
+                    "partofspeechcategory": "verb",
+                    "tense": "pastanterior",
+                    "person": "third",
+                    "number": "plural"
+                }
+            },
+            {
+                "surfaceform": "mangerais",
+                "partofspeech": {
+                    "partofspeechcategory": "verb",
+                    "tense": "conditional",
+                    "person": "first",
+                    "number": "singular"
+                }
+            },
+            {
+                "surfaceform": "mangerais",
+                "partofspeech": {
+                    "partofspeechcategory": "verb",
+                    "tense": "conditional",
+                    "person": "second",
+                    "number": "singular"
+                }
+            },
+            {
+                "surfaceform": "mangerait",
+                "partofspeech": {
+                    "partofspeechcategory": "verb",
+                    "tense": "conditional",
+                    "person": "third",
+                    "number": "singular"
+                }
+            },
+            {
+                "surfaceform": "mangerions",
+                "partofspeech": {
+                    "partofspeechcategory": "verb",
+                    "tense": "conditional",
+                    "person": "first",
+                    "number": "plural"
+                }
+            },
+            {
+                "surfaceform": "mangeriez",
+                "partofspeech": {
+                    "partofspeechcategory": "verb",
+                    "tense": "conditional",
+                    "person": "second",
+                    "number": "plural"
+                }
+            },
+            {
+                "surfaceform": "mangeraient",
+                "partofspeech": {
+                    "partofspeechcategory": "verb",
+                    "tense": "conditional",
+                    "person": "third",
+                    "number": "plural"
+                }
+            },
+            {
+                "surfaceform": "aurais mang\u00e9",
+                "partofspeech": {
+                    "partofspeechcategory": "verb",
+                    "tense": "pastconditional",
+                    "person": "first",
+                    "number": "singular"
+                }
+            },
+            {
+                "surfaceform": "aurais mang\u00e9",
+                "partofspeech": {
+                    "partofspeechcategory": "verb",
+                    "tense": "pastconditional",
+                    "person": "second",
+                    "number": "singular"
+                }
+            },
+            {
+                "surfaceform": "aurait mang\u00e9",
+                "partofspeech": {
+                    "partofspeechcategory": "verb",
+                    "tense": "pastconditional",
+                    "person": "third",
+                    "number": "singular"
+                }
+            },
+            {
+                "surfaceform": "aurions mang\u00e9",
+                "partofspeech": {
+                    "partofspeechcategory": "verb",
+                    "tense": "pastconditional",
+                    "person": "first",
+                    "number": "plural"
+                }
+            },
+            {
+                "surfaceform": "auriez mang\u00e9",
+                "partofspeech": {
+                    "partofspeechcategory": "verb",
+                    "tense": "pastconditional",
+                    "person": "second",
+                    "number": "plural"
+                }
+            },
+            {
+                "surfaceform": "auraient mang\u00e9",
+                "partofspeech": {
+                    "partofspeechcategory": "verb",
+                    "tense": "pastconditional",
+                    "person": "third",
+                    "number": "plural"
+                }
+            },
+            {
+                "surfaceform": "mange",
+                "partofspeech": {
+                    "partofspeechcategory": "verb",
+                    "tense": "presentsubjunctive",
+                    "person": "first",
+                    "number": "singular"
+                }
+            },
+            {
+                "surfaceform": "manges",
+                "partofspeech": {
+                    "partofspeechcategory": "verb",
+                    "tense": "presentsubjunctive",
+                    "person": "second",
+                    "number": "singular"
+                }
+            },
+            {
+                "surfaceform": "mange",
+                "partofspeech": {
+                    "partofspeechcategory": "verb",
+                    "tense": "presentsubjunctive",
+                    "person": "third",
+                    "number": "singular"
+                }
+            },
+            {
+                "surfaceform": "mangions",
+                "partofspeech": {
+                    "partofspeechcategory": "verb",
+                    "tense": "presentsubjunctive",
+                    "person": "first",
+                    "number": "plural"
+                }
+            },
+            {
+                "surfaceform": "mangiez",
+                "partofspeech": {
+                    "partofspeechcategory": "verb",
+                    "tense": "presentsubjunctive",
+                    "person": "second",
+                    "number": "plural"
+                }
+            },
+            {
+                "surfaceform": "mangent",
+                "partofspeech": {
+                    "partofspeechcategory": "verb",
+                    "tense": "presentsubjunctive",
+                    "person": "third",
+                    "number": "plural"
+                }
+            },
+            {
+                "surfaceform": "aie mang\u00e9",
+                "partofspeech": {
+                    "partofspeechcategory": "verb",
+                    "tense": "pastsubjunctive",
+                    "person": "first",
+                    "number": "singular"
+                }
+            },
+            {
+                "surfaceform": "aies mang\u00e9",
+                "partofspeech": {
+                    "partofspeechcategory": "verb",
+                    "tense": "pastsubjunctive",
+                    "person": "second",
+                    "number": "singular"
+                }
+            },
+            {
+                "surfaceform": "ait mang\u00e9",
+                "partofspeech": {
+                    "partofspeechcategory": "verb",
+                    "tense": "pastsubjunctive",
+                    "person": "third",
+                    "number": "singular"
+                }
+            },
+            {
+                "surfaceform": "ayons mang\u00e9",
+                "partofspeech": {
+                    "partofspeechcategory": "verb",
+                    "tense": "pastsubjunctive",
+                    "person": "first",
+                    "number": "plural"
+                }
+            },
+            {
+                "surfaceform": "ayez mang\u00e9",
+                "partofspeech": {
+                    "partofspeechcategory": "verb",
+                    "tense": "pastsubjunctive",
+                    "person": "second",
+                    "number": "plural"
+                }
+            },
+            {
+                "surfaceform": "aient mang\u00e9",
+                "partofspeech": {
+                    "partofspeechcategory": "verb",
+                    "tense": "pastsubjunctive",
+                    "person": "third",
+                    "number": "plural"
+                }
+            },
+            {
+                "surfaceform": "mangeasse",
+                "partofspeech": {
+                    "partofspeechcategory": "verb",
+                    "tense": "imperfectsubjunctive",
+                    "person": "first",
+                    "number": "singular"
+                }
+            },
+            {
+                "surfaceform": "mangeasses",
+                "partofspeech": {
+                    "partofspeechcategory": "verb",
+                    "tense": "imperfectsubjunctive",
+                    "person": "second",
+                    "number": "singular"
+                }
+            },
+            {
+                "surfaceform": "mange\u00e2t",
+                "partofspeech": {
+                    "partofspeechcategory": "verb",
+                    "tense": "imperfectsubjunctive",
+                    "person": "third",
+                    "number": "singular"
+                }
+            },
+            {
+                "surfaceform": "mangeassions",
+                "partofspeech": {
+                    "partofspeechcategory": "verb",
+                    "tense": "imperfectsubjunctive",
+                    "person": "first",
+                    "number": "plural"
+                }
+            },
+            {
+                "surfaceform": "mangeassiez",
+                "partofspeech": {
+                    "partofspeechcategory": "verb",
+                    "tense": "imperfectsubjunctive",
+                    "person": "second",
+                    "number": "plural"
+                }
+            },
+            {
+                "surfaceform": "mangeassent",
+                "partofspeech": {
+                    "partofspeechcategory": "verb",
+                    "tense": "imperfectsubjunctive",
+                    "person": "third",
+                    "number": "plural"
+                }
+            },
+            {
+                "surfaceform": "eusse mang\u00e9",
+                "partofspeech": {
+                    "partofspeechcategory": "verb",
+                    "tense": "pastperfectsubjunctive",
+                    "person": "first",
+                    "number": "singular"
+                }
+            },
+            {
+                "surfaceform": "eusses mang\u00e9",
+                "partofspeech": {
+                    "partofspeechcategory": "verb",
+                    "tense": "pastperfectsubjunctive",
+                    "person": "second",
+                    "number": "singular"
+                }
+            },
+            {
+                "surfaceform": "e\u00fbt mang\u00e9",
+                "partofspeech": {
+                    "partofspeechcategory": "verb",
+                    "tense": "pastperfectsubjunctive",
+                    "person": "third",
+                    "number": "singular"
+                }
+            },
+            {
+                "surfaceform": "eussions mang\u00e9",
+                "partofspeech": {
+                    "partofspeechcategory": "verb",
+                    "tense": "pastperfectsubjunctive",
+                    "person": "first",
+                    "number": "plural"
+                }
+            },
+            {
+                "surfaceform": "eussiez mang\u00e9",
+                "partofspeech": {
+                    "partofspeechcategory": "verb",
+                    "tense": "pastperfectsubjunctive",
+                    "person": "second",
+                    "number": "plural"
+                }
+            },
+            {
+                "surfaceform": "eussent mang\u00e9",
+                "partofspeech": {
+                    "partofspeechcategory": "verb",
+                    "tense": "pastperfectsubjunctive",
+                    "person": "third",
+                    "number": "plural"
+                }
+            },
+            {
+                "surfaceform": "mange",
+                "partofspeech": {
+                    "partofspeechcategory": "verb",
+                    "tense": "imperative",
+                    "person": "second",
+                    "number": "singular"
+                }
+            },
+            {
+                "surfaceform": "mangeons",
+                "partofspeech": {
+                    "partofspeechcategory": "verb",
+                    "tense": "imperative",
+                    "person": "first",
+                    "number": "plural"
+                }
+            },
+            {
+                "surfaceform": "mangez",
+                "partofspeech": {
+                    "partofspeechcategory": "verb",
+                    "tense": "imperative",
+                    "person": "second",
+                    "number": "plural"
+                }
+            }
+        ]
+    }
+]
