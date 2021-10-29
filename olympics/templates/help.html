@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Movie API reference</title>
+</head>
+<body>
+    <pre>Olympics API: endpoint reference
+All responses are in JSON
+
+REQUEST: /
+RESPONSE:
+    A greeting from the API
+
+REQUEST: /help
+RESPONSE:
+    This message
+
+REQUEST: /games
+RESPONSE:
+    A list containing a dictionary for each Olympic Games, with each dictionary 
+    containing the ID, year, season, and city of an Olympic Games.
+
+REQUEST: /nocs
+RESPONSE:
+    A list containing the abbreviation and country name for each NOC, ordered 
+    alphabetically by abbreviation. The information for each NOC is in a
+    separate dictionary.
+
+REQUEST: /medalists/games/{games_id}[?noc={noc}]
+RESPONSE:
+    A list containing the ID, name, and sex of all athletes that won a medal at
+    the Games corresponding to the given ID. Optionally, the output can be 
+    constrained to only the athletes from a specified NOC. The information for 
+    each athlete is in a separate dictionary.
+
+    </pre>
+</body>
+</html>

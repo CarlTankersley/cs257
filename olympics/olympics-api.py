@@ -37,6 +37,9 @@ def main():
 
 @flask_app.route('/medalists/games/<games_id>')
 def get_athletes(games_id):
+    '''Returns the ID, name, and sex of all athletes from the given games that won a medal, along with the sport and
+       event in which they were competing and the medal that they won. Optionally, if an NOC is specified, the list is
+       constrained to only athletes from that NOC who won a medal at the specified games.'''
     query = '''SELECT athletes.id, athletes.name, athletes.sex, events.sport, events.event, medals.medal, teams.noc
                FROM athletes, events, medals, games, links, teams
                WHERE games.id = %s
@@ -52,8 +55,8 @@ def get_athletes(games_id):
         print(e)
         exit()
     athletes_list = []
+    noc = flask.request.args.get('noc')
     for athlete in olympics_app.cursor:
-        noc = flask.request.args.get('noc')
         if noc and noc != athlete[6]:
             continue
         athlete_dict = {}
@@ -68,6 +71,7 @@ def get_athletes(games_id):
 
 @flask_app.route('/nocs')
 def get_nocs():
+    '''Returns the abbreviation and country name for each NOC in alphabetical order by abbreviation'''
     query = 'SELECT noc, country FROM teams ORDER BY noc'
     try:
         olympics_app.cursor.execute(query)
@@ -84,7 +88,7 @@ def get_nocs():
 
 @flask_app.route('/games')
 def get_games():
-    # TODO: make giant comment
+    '''Returns the games ID, year, season, and city for each Olympic Games'''
     query = 'SELECT * FROM games'
     try:
         olympics_app.cursor.execute(query)
@@ -100,6 +104,17 @@ def get_games():
         game_dict['city'] = game[3]
         games_list.append(game_dict)
     return json.dumps(games_list)
+
+@flask_app.route('/help')
+def display_help():
+    '''Returns a help message'''
+    return flask.render_template('help.html')
+
+
+@flask_app.route('/')
+def display_hello():
+    '''Returns a greeting'''
+    return flask.render_template('hello.html')
 
 if __name__ == '__main__':
     main()
