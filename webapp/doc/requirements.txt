@@ -1,0 +1,26 @@
+Carl Tankersley and Soren DeHaan
+
+This dataset is a collection of metadata about various TED talks, along with transcripts and links to the actual talks. It includes key data such as tags, publishing date, and a brief summary of the talk. The data can be gotten here: https://www.kaggle.com/rounakbanik/ted-talks (just click Download)
+
+
+“As a TED talk fan, I can find TED talks related to a given topic or video so that I can watch relevant TED talks.”
+This can be implemented by linking the TED talks to their provided topics and related videos, as per the database. Specifically, we can have a set of drop-down menus (topic, year, etc.) and a search bar in order to find most videos, and every video will be accompanied by a set of recommended videos.
+
+“As a TED talk enjoyer, I can find unusual categories and statistics so that I can find entertaining facts about TED talks.”
+This can be implemented by offering different sorting parameters and allowing users to search for TED talks with particular characteristics. For example, we can have a ‘reactions’ drop-down menu, which allows users to sort by how many ‘Funny’ versus ‘Inspiring’ reactions the video got.
+
+“As a member of the TED talk community, I can find entertaining procedurally generated TED talks so that I can make memes out of them.”
+This can be implemented by making a neural net and outputting the results to another accessible database. We can also allow users to supply a key word or phrase to be used in the generation of the content to customize it to their liking.
+
+“As a software developer, I can easily interact with the API so that I can make my pet projects work with minimal hassle.”
+This can be implemented by having a clear and scalable API. For now, this means laying out all of our API functionality clearly, and sticking to it.
+
+“As a software developer, I can read and navigate the code easily so that upkeep is quick.”
+This can be implemented by adhering to good design principles to make sure our code is of good quality, such as using good variable and method names and quality functions and routines.
+
+“As TED, I can talk.”
+This can be implemented by removing the tongues of any users who dare to speak ill of our creation, and bequeathing them unto TED. Praise TED.
+
+“As Jeff, I can easily navigate my favorite students’ website, so that I can enjoy all of the magnificent features which they have painstakingly crafted.”
+This can be implemented by creating a wonderful user experience that will leave Jeff with no choice but to give us an A.
+
