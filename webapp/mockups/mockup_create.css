@@ -1,9 +1,8 @@
 #header {
-    width: 100%;
     margin: 0px;
     padding: 8px;
     background: #DDDDDD;
-    float: center;
+    /* float: center; */
 }
 
 .header_button {
@@ -12,12 +11,16 @@
     line-height: 5px;
     margin: 8px;
     padding: 4px;
-    background: #a4edff;
+    /* background: #5bddfd; */
     float: right;
     text-align: center;
     vertical-align: middle;
     margin-right: 13px;
-    border: 1px solid black;
+}
+
+.header_button:hover {
+    background: #5bddfd;
+    color: white;
 }
 
 #sidebar {
