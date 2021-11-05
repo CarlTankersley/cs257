@@ -1,5 +1,26 @@
 /* Created by Carl Tankersley and Soren DeHaan */
 
+.bonus_bar {
+    margin: 20px 0px 0px 0px;
+    padding: 8px;
+    background: #bbbbbb;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bonus_button {
+    width: 120px;
+    height: 40px;
+    line-height: 5px;
+    margin: 8px;
+    padding: 4px;
+    background: #DDDDDD;
+    float: center;
+    text-align: center;
+    vertical-align: middle;
+}
+
 #header {
     margin: 0px;
     padding: 8px;

@@ -3,8 +3,8 @@ Carl Tankersley and Soren DeHaan
 This dataset is a collection of metadata about various TED talks, along with transcripts and links to the actual talks. It includes key data such as tags, publishing date, and a brief summary of the talk. The data can be gotten here: https://www.kaggle.com/rounakbanik/ted-talks (just click Download)
 
 
-“As a TED talk fan, I can find TED talks related to a given topic or video so that I can watch relevant TED talks.”
-This can be implemented by linking the TED talks to their provided topics and related videos, as per the database. Specifically, we can have a set of drop-down menus (topic, year, etc.) and a search bar in order to find most videos, and every video will be accompanied by a set of recommended videos.
+“As a TED talk fan, I can find TED talks related to a given topic so that I can watch relevant TED talks.”
+This can be implemented by linking the TED talks to their provided topics, as per the database. Specifically, we can have a set of drop-down menus (topic, year, etc.) and a search bar in order to find most videos, and every video will be accompanied by a set of recommended videos.
 
 “As a TED talk enjoyer, I can find unusual categories and statistics so that I can find entertaining facts about TED talks.”
 This can be implemented by offering different sorting parameters and allowing users to search for TED talks with particular characteristics. For example, we can have a ‘reactions’ drop-down menu, which allows users to sort by how many ‘Funny’ versus ‘Inspiring’ reactions the video got.
