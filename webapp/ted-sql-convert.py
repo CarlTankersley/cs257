@@ -2,11 +2,13 @@ import csv
 import re
 from itertools import count, filterfalse
 
-event_speaker_talk = {''}
-talk_info = {''}
-speaker_job = {''}
-related_talks = {''}
+event_speaker_talk = {''}  # contains talk_id, event, main_speaker, title
+talk_info = {''}  # contains pretty much whatever
+speaker_job = {''}  # contains speaker, occupation
+related_talks = {''}  # contains talk_id, followed by 5 other talk_ids
+# contains talk_id, followed by the number of each of the 15 possible ratings, in order
 ratings = {''}
+rating_link = {''}  # contains rating types and rating ids, going both ways
 counter = 0
 id_dict = {}
 id_set = set()
@@ -15,9 +17,6 @@ rating_dict = {}
 with open('data/ted_main.csv') as original_data:
     reader = csv.DictReader(original_data)
     for row in reader:
-        counter += 1
-        if counter == 0:
-            continue
         string_to_process = row['related_talks']
         regex_id = re.compile('\'id\': ([^,]*),')
         id_list = [int(id) for id in regex_id.findall(string_to_process)]
@@ -64,7 +63,7 @@ with open('data/ted_main.csv') as original_data:
         rating_list = [int(rid) for rid in regex_num.findall(rating_input)]
 
         rating_overall = []
-        for i in range(round(len(rating_dict)/2)):
+        for i in range(26):
             if i in reaction_id_list:
                 rating_overall.append(rating_list[reaction_id_list.index(i)])
             else:
@@ -78,4 +77,5 @@ with open('data/ted_main.csv') as original_data:
         speaker_job.add((row['main_speaker'], row['speaker_occupation']))
         related_talks.add(related_ids)
         ratings.add(rating_overall)
-        rating_dict = list(rating_dict)
+        for i in rating_dict.keys():
+            rating_link.add((i, rating_dict[i]))
