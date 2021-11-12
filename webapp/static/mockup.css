@@ -1,0 +1,167 @@
+/* Created by Carl Tankersley and Soren DeHaan */
+
+.bonus_bar {
+    margin: 20px 0px 0px 0px;
+    padding: 8px;
+    background: #bbbbbb;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bonus_button {
+    width: 120px;
+    height: 40px;
+    line-height: 5px;
+    margin: 8px;
+    padding: 4px;
+    background: #DDDDDD;
+    float: center;
+    text-align: center;
+    vertical-align: middle;
+}
+
+#header {
+    margin: 0px;
+    padding: 8px;
+    background: #DDDDDD;
+    /* float: center; */
+}
+
+.header_button {
+    width: 150px;
+    height: 50px;
+    line-height: 5px;
+    margin: 8px;
+    padding: 4px;
+    /* background: #5bddfd; */
+    float: right;
+    text-align: center;
+    vertical-align: middle;
+    margin-right: 13px;
+}
+
+.header_button:hover {
+    background: #5bddfd;
+    color: white;
+}
+
+#sidebar_create {
+    width: 900px;
+    height: 750px;
+    float: right;
+    background: #bbbbbb;
+    border: 1px solid black;
+    margin-right: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#sidebar_about {
+    width: 200px;
+    float: left;
+    margin: 0px;
+    padding: 8px;
+    background: #bbbbbb;
+}
+
+#info_box_create {
+    width: 800px;
+    height: 900px;
+    float: left;
+    margin: 0px;
+    border: 1px solid black;
+}
+
+#info_box_about {
+    border: 1px solid black;
+    width: 1649px;
+    height: 800px;
+    margin: 10px;
+    float: right;
+}
+
+.sidebar_button {
+    width: 96.5%;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 12px;
+    height: 50px;
+    margin-bottom: 10px;
+    padding: 4px;
+    background: #5bddfd;
+}
+
+.category_button {
+    border: 1px solid black;
+    height: 50px;
+    width: 150px;
+    text-align: center;
+    background: white;
+    line-height: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+}
+
+
+.video-box {
+    padding: 28px 32px;
+}
+
+.video {
+    float: left;
+    padding: 22px 0px 8px 16px;
+}
+
+div.imageWrapper img {
+    width: 256px;
+    height: 144px;
+}
+
+div.bigImageWrapper img {
+    width: 1024px;
+    height: 576px;
+}
+
+.imageWrapper {
+    float: left;
+}
+
+.videoSidebar {
+    inline-size: 160px;
+    float: left;
+    padding: 0px 0px 0px 8px;
+    line-height: 1em;
+}
+
+.descriptionPadding{
+    padding: 6px 6px;
+}
+
+.description{
+    padding: 1px 4px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+            line-clamp: 4;
+    -webkit-box-orient: vertical;
+}
+
+.bigDescription{
+    inline-size: 1024px;
+    padding: 2px 16px;
+}
+
+.metadata {
+    color: grey;
+}
+
+div.centered{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

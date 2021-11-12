@@ -7,7 +7,7 @@ import json
 import psycopg2
 import argparse
 
-app = flask.Flask(__name__, static_folder=static, template_folder=templates)
+app = flask.Flask(__name__, static_folder='static', template_folder='templates')
 
 def parse_args():
     parser = argparse.ArgumentParser()
