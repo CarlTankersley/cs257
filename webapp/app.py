@@ -6,8 +6,10 @@ import flask
 import json
 import psycopg2
 import argparse
+import api
 
 app = flask.Flask(__name__, static_folder='static', template_folder='templates')
+app.register_blueprint(api.api, url_prefix='/api')
 
 def parse_args():
     parser = argparse.ArgumentParser()

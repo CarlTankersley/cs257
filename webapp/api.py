@@ -16,3 +16,7 @@ def setup_db():
         print(e)
         exit()
     return connection, cursor
+
+@api.route('/about')
+def get_about():
+    return flask.render_template('about.html')
