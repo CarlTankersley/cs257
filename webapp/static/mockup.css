@@ -1,5 +1,12 @@
 /* Created by Carl Tankersley and Soren DeHaan */
 
+.create_sidebar {
+    inline-size: 320px;
+    float: left;
+    padding: 8px 8px;
+    line-height: 2em;
+}
+
 .bonus_bar {
     margin: 20px 0px 0px 0px;
     padding: 8px;
