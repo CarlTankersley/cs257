@@ -52,8 +52,10 @@ with open('data/ted_main.csv') as original_data:
             id_set.add(id)
         related_input = row['related_talks']
         regex_id = re.compile('\'id\': ([^,]*),')
-        related_ids = (id, *[int(rid)
-                       for rid in regex_id.findall(related_input)])
+        related_list = [int(rid) for rid in regex_id.findall(related_input)]
+        while(len(related_list) < 6):
+            related_list.append(-1)
+        related_ids = (id, *related_list)
 
         rating_input = row['ratings']
         regex_reaction_id = re.compile('\'id\': ([^,]*),')
@@ -72,10 +74,40 @@ with open('data/ted_main.csv') as original_data:
 
         event_speaker_talk.add(
             (id, row['event'], row['main_speaker'], row['title']))
-        talk_info.add((id, row['comments'], row['description'], row['duration'], row['film_date'], row['languages'],
+        talk_info.add((id, row['comments'], row['description'], row['duration'], row['film_date'],
                       row['name'], row['num_speaker'], row['published_date'], row['tags'], row['url'], row['views']))
         speaker_job.add((row['main_speaker'], row['speaker_occupation']))
         related_talks.add(related_ids)
         ratings.add(rating_overall)
         for i in rating_dict.keys():
             rating_link.add((i, rating_dict[i]))
+
+with open('output/event_speaker_talk.csv', 'w') as output_file:
+    links = csv.writer(output_file)
+    for link in event_speaker_talk:
+        links.writerow(link)
+
+with open('output/talk_info.csv', 'w') as output_file:
+    links = csv.writer(output_file)
+    for link in talk_info:
+        links.writerow(link)
+
+with open('output/speaker_job.csv', 'w') as output_file:
+    links = csv.writer(output_file)
+    for link in speaker_job:
+        links.writerow(link)
+
+with open('output/related_talks.csv', 'w') as output_file:
+    links = csv.writer(output_file)
+    for link in related_talks:
+        links.writerow(link)
+
+with open('output/ratings.csv', 'w') as output_file:
+    links = csv.writer(output_file)
+    for link in ratings:
+        links.writerow(link)
+
+with open('output/rating_link.csv', 'w') as output_file:
+    links = csv.writer(output_file)
+    for link in rating_link:
+        links.writerow(link)
