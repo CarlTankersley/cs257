@@ -24,10 +24,10 @@ def setup_db():
 
 @api.route('/random/')
 def get_random_speaker():
-    rand_int = random.randint(0, 100)
+    rand_int = random.randint(0, 1000)
     query = '''SELECT main_speaker, title
                FROM event_speaker_talk
-               WHERE id = %s'''
+               WHERE id = %d'''
     cursor, connection = setup_db()
     cursor.execute(query, (rand_int,))
     speaker = {}
