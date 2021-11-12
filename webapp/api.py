@@ -1,3 +1,7 @@
+'''Soren DeHaan and Carl Tankersley
+   11/11/2021
+   CS 257 - Software Design'''
+
 import psycopg2
 import flask
 from config import database, user, password
