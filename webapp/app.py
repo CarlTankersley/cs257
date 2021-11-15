@@ -63,5 +63,10 @@ def watch():
     return flask.render_template('watch.html')
 
 
+@app.route('/favicon.ico')
+def favicon():
+    return flask.send_file('static/favicon.ico')
+
+
 if __name__ == '__main__':
     main()
