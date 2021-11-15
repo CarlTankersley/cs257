@@ -11,31 +11,36 @@ ratings = {''}
 rating_link = {''}  # contains rating types and rating ids, going both ways
 counter = 0
 id_dict = {}
+image_dict = {}
 id_set = set()
 rating_dict = {}
 
 with open('data/ted_main.csv') as original_data:
     reader = csv.DictReader(original_data)
+    regex_id = re.compile('\'id\': ([^,]*),')
+    regex_title = re.compile('\'title\': [\'\"](.+?)[\'\"],')
+    regex_image = re.compile('\'hero\': \'(.+?)\',')
+    regex_reaction_id = re.compile('\'id\': ([^,]*),')
+    regex_rating = re.compile('\'name\': ([^,]*),')
     for row in reader:
         string_to_process = row['related_talks']
-        regex_id = re.compile('\'id\': ([^,]*),')
         id_list = [int(id) for id in regex_id.findall(string_to_process)]
-        regex_title = re.compile('\'title\': [\'\"](.+?)[\'\"],')
+        image_list = [
+            image for image in regex_image.findall(string_to_process)]
         title_list = [re.sub('^"+|"+$', '', re.sub('\\\\\\\'', "'", title))
                       for title in regex_title.findall(string_to_process)]
         for i in range(len(title_list)):
             if not title_list[i] in id_dict:
                 id_dict[title_list[i]] = id_list[i]
                 id_set.add(id_list[i])
+                image_dict[title_list[i]] = image_list[i]
 
         string_to_process = row['ratings']
-        regex_reaction_id = re.compile('\'id\': ([^,]*),')
         reaction_id_list = [int(id)
                             for id in regex_reaction_id.findall(string_to_process)]
-        regex_rating = re.compile('\'name\': ([^,]*),')
         rating_list = regex_rating.findall(string_to_process)
         for i in range(len(rating_list)):
-            if not rating_list[i] in id_dict:
+            if not rating_list[i] in rating_dict:
                 rating_dict[rating_list[i]] = reaction_id_list[i]
                 rating_dict[reaction_id_list[i]] = rating_list[i]
 
@@ -46,8 +51,10 @@ with open('data/ted_main.csv') as original_data:
         title = re.sub('^"+|"+$', '', row['title'])
         if title in id_dict.keys():
             id = id_dict[title]
+            image = image_dict[title]
         else:
             id = next(filterfalse(id_set.__contains__, count(1)))
+            image = "https://commons.wikimedia.org/wiki/File:Ted_Cruz,_official_portrait,_113th_Congress_(cropped_4).jpg"
             id_dict[title] = id
             id_set.add(id)
         related_input = row['related_talks']
@@ -73,10 +80,11 @@ with open('data/ted_main.csv') as original_data:
         rating_overall = (id, *rating_overall)
 
         event_speaker_talk.add(
-            (id, row['event'], row['main_speaker'], row['title']))
+            (id, row['event'], row['main_speaker'].strip(), row['title']))
         talk_info.add((id, row['comments'], row['description'], row['duration'], row['film_date'],
-                      row['name'], row['num_speaker'], row['published_date'], row['tags'], row['url'], row['views']))
-        speaker_job.add((row['main_speaker'], row['speaker_occupation']))
+                      row['name'], row['num_speaker'], row['published_date'], row['tags'], row['url'], row['views'], image))
+        speaker_job.add((row['main_speaker'].strip(),
+                        row['speaker_occupation']))
         related_talks.add(related_ids)
         ratings.add(rating_overall)
         for i in rating_dict.keys():
