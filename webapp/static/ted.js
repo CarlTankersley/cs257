@@ -42,7 +42,7 @@ function onRandomSpeakerButton() {
 
 function search_speaker() {
     let input = document.getElementById('speaker_search').value;
-    let url = getAPIBaseURL() + '/speakers/';
+    let url = getAPIBaseURL() + '/search_videos/?search=' + input;
     fetch(url, {method: 'get'})
     .then((response) => response.json())
     .then(function(speakers) {
