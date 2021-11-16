@@ -1,5 +1,57 @@
 /* Created by Carl Tankersley and Soren DeHaan */
 
+#speaker_search {
+    min-width: 370px;
+    max-width: 500px;
+    margin: 16px 0px 4px 0px;
+    font-size:120%;
+    font-family:serif;
+}
+
+.bonus_button_wrapper {
+    margin: 8px;
+}
+
+.dropbtn {
+    background-color: #DDDDDD;
+    color: black;
+    width: 120px;
+    height: 48px;
+    line-height: 5px;
+    margin: 0px;
+    padding: 4px;
+    border: none;
+    font-family: serif;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #bbbbbb;
+    min-width: 120px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 0px 4px;
+    margin: 4px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {background-color: #DDDDDD;}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown:hover .dropbtn {background-color: #5bddfd;}
+
 .create_sidebar {
     inline-size: 320px;
     float: left;
@@ -16,16 +68,37 @@
     justify-content: center;
 }
 
-.bonus_button {
+.blank_bonus_button {
     width: 120px;
     height: 40px;
     line-height: 5px;
-    margin: 8px;
+    margin: 0px;
     padding: 4px;
-    background: #DDDDDD;
     float: center;
     text-align: center;
     vertical-align: middle;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bonus_button {
+    background-color: #DDDDDD;
+    color: black;
+    width: 120px;
+    height: 48px;
+    line-height: 5px;
+    margin: 0px;
+    padding: 4px;
+    border: none;
+    font-family: serif;
+    cursor: pointer;
+}
+
+.bonus_button:hover {
+    background: #5bddfd;
+    color: white;
 }
 
 #header {
