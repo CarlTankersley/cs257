@@ -4,12 +4,12 @@ DATA: a bunch of TED talk data, linking speakers to talks to events, and providi
 
 FEATURES CURRENTLY WORKING:
 - fully navigable website
-- cute dog pictures
-- click a button for random talk
+- a nice, auto-formatting video layout
+- click a button for random talk (in Create, not the Random button yet)
+- search for talks
+- ted icon
 
 FEATURES NOT YET WORKING:
-- search for talks
-- sort talks by reaction
+- sort talks
 - list related talks
 - playable videos
-- a whole neural net for generating ted talks
