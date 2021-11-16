@@ -36,3 +36,38 @@ def get_random_speaker():
     cursor.close()
     connection.close()
     return json.dumps(speaker)
+
+
+@api.route('/search_videos/')
+def search_videos():
+    fields = "id, name, description, duration, image"
+    table = "talk_info"
+    conditions = ""
+    sort = "name"
+
+    sort_argument = flask.request.args.get('sort')
+    if sort_argument == 'duration':
+        sort = sort_argument
+
+    search_argument = flask.request.args.get('search')
+    conditions += f"name LIKE '%{search_argument}%'"
+
+    query = (f"SELECT {fields} "
+             f"FROM {table} "
+             f"WHERE {conditions}"
+             f"ORDER BY {sort}")
+
+    talk_list = []
+    connection, cursor = setup_db()
+    cursor.execute(query, tuple())
+    for row in cursor:
+        talk = {'id': row[0],
+                'name': row[1],
+                'description': row[2],
+                'duration': row[3],
+                'image': row[4]}
+        talk_list.append(talk)
+    cursor.close()
+    connection.close()
+
+    return json.dumps(talk_list)
