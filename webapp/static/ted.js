@@ -10,6 +10,10 @@ function initialize() {
     if (element) {
         element.onclick = onRandomSpeakerButton;
     }
+    let element2 = document.getElementById('submit');
+    if(element2){
+        element2.onClick = search_speaker;
+    }
 }
 
 function getAPIBaseURL() {
