@@ -39,3 +39,11 @@ function onRandomSpeakerButton() {
             console.log(error);
         });
 }
+
+function search_speaker() {
+    let input = document.getElementById('speaker_search').value;
+    let url = getAPIBaseURL() + '/speakers/';
+    fetch(url, {method: 'get'})
+    .then((response) => response.json())
+    .then(function())
+}
