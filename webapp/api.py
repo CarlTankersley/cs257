@@ -71,3 +71,7 @@ def search_videos():
     connection.close()
 
     return json.dumps(talk_list)
+
+@api.route('/help/')
+def display_help():
+    return flask.send_file('api_documentation.txt')

@@ -1,0 +1,41 @@
+REQUEST: /random
+
+GET: parameters
+    None
+
+RESPONSE: a JSON dictionary with the following fields about a random TED talk:
+    name -- (TEXT) the name of the main speaker(s) of the talk
+    title -- (TEXT) the title of the talk
+
+EXAMPLE:
+    /random
+
+        {"name": "Cédric Villani", "title": "What's so sexy about math?"}
+
+REQUEST: /search_videos
+
+GET: parameters
+    search -- (TEXT) search text to find in the names of speakers
+
+RESPONSE: a JSON list containing a dictionary for each speaker whose name contains
+the search string, each of which has the following fields:
+    id -- (INTEGER) the ID number associated with the talk
+    name -- (TEXT) the name of the talk
+    description -- (TEXT) a description of the talk
+    duration -- (INTEGER) the duration of the talk in seconds
+    image -- (TEXT) the URL of the image for the video thumbnail
+
+EXAMPLE: 
+    /search_videos?search=Savage
+
+        [{"id": 105, "name": "Jeff Bezos: The electricity metaphor for the web's future", 
+        "description": "The dot-com boom and bust is often compared to the Gold Rush. But 
+        Amazon.com founder Jeff Bezos says it\u2019s more like the early days of the 
+        electric industry.", "duration": 1031, 
+        "image": "https://pe.tedcdn.com/images/ted/505_480x360.jpg"}, 
+        {"id": 923, "name": "Jeff Bezos: What matters more than your talents", 
+        "description": "In this Princeton University graduation address, Amazon founder 
+        Jeff Bezos makes the case that our character is reflected not in the gifts we're 
+        endowed with at birth, but by the choices we make over the course of a lifetime.", 
+        "duration": 1124, "image": 
+        "https://pe.tedcdn.com/images/ted/fe7066b02de486b7f4285f539ebd04e17bfbeeb7_2880x1620.jpg"}]
