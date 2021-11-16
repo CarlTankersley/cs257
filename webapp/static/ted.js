@@ -67,6 +67,14 @@ function search_speaker() {
                      + '<div class="metadata">'
                      + '<div class="views">Views: 83,190</div>'
                      + '<div class="runtime">04:11</div>'
-                     + '</div></div></div>'        }
+                     + '</div></div></div>';  
+        }
+        let videos = document.getElementById('video_box');  
+        if(videos){
+            videos.innerHTML = video_box;
+        }
     })
+    .catch(function(error){
+        console.log(error);
+    });
 }
