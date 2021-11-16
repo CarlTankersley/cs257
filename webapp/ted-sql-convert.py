@@ -41,7 +41,6 @@ with open('data/ted_main.csv') as original_data:
         rating_list = regex_rating.findall(string_to_process)
         for i in range(len(rating_list)):
             if not rating_list[i] in rating_dict:
-                rating_dict[rating_list[i]] = reaction_id_list[i]
                 rating_dict[reaction_id_list[i]] = rating_list[i]
 
 
