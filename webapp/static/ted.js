@@ -55,8 +55,8 @@ function search_speaker() {
                 let speaker = speakers[i];
                 newHTML += '<div class="video">'
                     + '<div class="imageWrapper">'
-                    + '<a href="video.html"><img'
-                    + 'src="' + speaker["image"] + '"'
+                    + '<a href="video.html"><img '
+                    + 'src="' + encodeURIComponent(speaker["image"]).replace(/\s+/g, '') + '" '
                     + 'class="" title="" alt="video"></a>'
                     + '</div>'
                     + '<div class="videoSidebar">'
@@ -69,10 +69,9 @@ function search_speaker() {
                     + speaker["description"]
                     + '</div></div>'
                     + '<div class="metadata">'
-                    + '<div class="views">Views: 83,190</div>'
-                    + '<div class="runtime">04:11</div>'
                     + '</div></div></div>';
             }
+            newHTML = decodeURIComponent(newHTML);
             let videos = document.getElementById('video_box');
             if (videos) {
                 videos.innerHTML = newHTML;
