@@ -45,5 +45,12 @@ function search_speaker() {
     let url = getAPIBaseURL() + '/speakers/';
     fetch(url, {method: 'get'})
     .then((response) => response.json())
-    .then(function())
+    .then(function(speakers) {
+        let newHTML = '';
+        for(let i = 0; i < speakers.length; i++){
+            let speaker = speakers[i];
+            newHTML += '<tr>'
+                        
+        }
+    })
 }
