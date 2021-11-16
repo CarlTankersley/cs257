@@ -50,9 +50,8 @@ def search_videos():
 
     search_argument = flask.request.args.get('search')
     print(search_argument)
-    # conditions += f"name LIKE '%{search_argument}%'"
 
-    query = (f"SELECT {fields} "
+    query = (f"SELECT {fields} " # Note that fields, table, and sort are not user input
              f"FROM {table} "
              "WHERE name LIKE %s "
              f"ORDER BY {sort}")
