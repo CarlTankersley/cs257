@@ -50,7 +50,7 @@
 
 .dropdown:hover .dropdown-content {display: block;}
 
-.dropdown:hover .dropbtn {background-color: #5bddfd;}
+.dropdown:hover .dropbtn {background-color: #2294fe;}
 
 .create_sidebar {
     inline-size: 320px;
@@ -97,7 +97,7 @@
 }
 
 .bonus_button:hover {
-    background: #5bddfd;
+    background: #2294fe;
     color: white;
 }
 
@@ -122,7 +122,7 @@
 }
 
 .header_button:hover {
-    background: #5bddfd;
+    background: #2294fe;
     color: white;
 }
 
@@ -170,7 +170,7 @@
     height: 50px;
     margin-bottom: 10px;
     padding: 4px;
-    background: #5bddfd;
+    background: #2294fe;
 }
 
 .category_button {
