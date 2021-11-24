@@ -173,6 +173,10 @@
     float: right;
 }
 
+#info_box_padding {
+    padding: 10px 30px;
+}
+
 .sidebar_button {
     width: 96.5%;
     text-align: center;

@@ -101,7 +101,7 @@ function search_speaker() {
                     + '</div>'
                     + '<div class="videoSidebar">'
                     + '<div class="title">'
-                    + '<a href="video.html" title="" onclick="">'
+                    + '<a href="video.html?id=' + speaker["id"] + '" title="" onclick="">'
                     + speaker["name"] + '</a>'
                     + '</div>'
                     + '<div class="descriptionPadding">'
