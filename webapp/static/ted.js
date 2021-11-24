@@ -77,11 +77,11 @@ function oneRandomTalk() {
 function search_speaker() {
     let input = document.getElementById('speaker_search').value;
     let secondaryInput = document.getElementById('sorter').value;
-    console.log("secondary=" + secondaryInput)
+    // console.log("secondary=" + secondaryInput)
     let url = getAPIBaseURL() + '/search_videos/?search=' + input;
     if (secondaryInput) {
         url += '&sort="' + secondaryInput + '"'
-        console.log(url)
+        // console.log(url)
     }
     fetch(url, { method: 'get' })
         .then((response) => response.json())

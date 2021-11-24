@@ -4,7 +4,6 @@
 
 import psycopg2
 import flask
-# import random
 import json
 from config import database, user, password
 
@@ -24,13 +23,11 @@ def setup_db():
 
 @api.route('/random/')
 def get_random_speaker():
-    # rand_int = random.randint(0, 100)
     rand_query = '''SELECT id
                FROM event_speaker_talk
                ORDER BY RANDOM()
                LIMIT 1'''
     connection, cursor = setup_db()
-    # cursor.execute(query, (str(rand_int),))
     cursor.execute(rand_query, ())
     speaker = {}
     for row in cursor:
@@ -44,12 +41,13 @@ def get_random_speaker():
 @api.route('/search_videos/')
 def search_videos():
     # print("searching")
-    fields = "id, name, description, duration, image"
+    fields = "talk_info.id, talk_info.name, talk_info.description, talk_info.duration, talk_info.image"
     table = "talk_info"
     sort = "name"
+    table_linkers = ""
 
     sort_argument = flask.request.args.get('sort')
-    print(sort_argument)
+    # print(sort_argument)
     if sort_argument == '"Name (A-Z)"':
         sort = 'name'
     elif sort_argument == '"Name (Z-A)"':
@@ -58,6 +56,17 @@ def search_videos():
         sort = 'duration'
     elif sort_argument == '"Duration (high to low)"':
         sort = 'duration DESC'
+    elif sort_argument == '"Rating: Beautiful"' or sort_argument == '"Rating: Confusing"' \
+            or sort_argument == '"Rating: Courageous"' or sort_argument == '"Rating: Fascinating"' \
+            or sort_argument == '"Rating: Funny"' or sort_argument == '"Rating: Informative"' \
+            or sort_argument == '"Rating: Ingenious"' or sort_argument == '"Rating: Inspiring"' \
+            or sort_argument == '"Rating: Jaw-Dropping"' or sort_argument == '"Rating: Longwinded"' \
+            or sort_argument == '"Rating: Obnoxious"' or sort_argument == '"Rating: Ok"' \
+            or sort_argument == '"Rating: Persuasive"' or sort_argument == '"Rating: Unconvincing"':
+        table += ", ratings"
+        table_linkers = "AND talk_info.id = ratings.id"
+        sort = "ratings."
+        sort += sort_argument[9:-1].lower().replace("-", "_") + " DESC"
 
     search_argument = flask.request.args.get('search')
     # print(search_argument)
@@ -65,9 +74,10 @@ def search_videos():
     query = (f"SELECT {fields} "  # Note that fields, table, and sort are not user input
              f"FROM {table} "
              "WHERE name LIKE %s "
+             f"{table_linkers} "
              f"ORDER BY {sort} "
              "LIMIT 100")
-
+    print(query)
     talk_list = []
     connection, cursor = setup_db()
     if sort_argument == 'random':
