@@ -51,7 +51,7 @@ def search_videos():
     search_argument = flask.request.args.get('search')
     print(search_argument)
 
-    query = (f"SELECT {fields} " # Note that fields, table, and sort are not user input
+    query = (f"SELECT {fields} "  # Note that fields, table, and sort are not user input
              f"FROM {table} "
              "WHERE name LIKE %s "
              f"ORDER BY {sort}")
@@ -71,6 +71,35 @@ def search_videos():
     connection.close()
 
     return json.dumps(talk_list)
+
+
+@api.route('/video/<talk_id>')
+def get_video(talk_id):
+    fields = "id, url, image, name, description"
+    table = "talk_info"
+
+    search_argument = int(talk_id)
+    print(search_argument)
+
+    query = (f"SELECT {fields} "  # Note that fields, table, and sort are not user input
+             f"FROM {table} "
+             f"WHERE id = {search_argument} ")
+    print(query)
+    connection, cursor = setup_db()
+    cursor.execute(query, (search_argument,))
+    talk = {}
+    for row in cursor:
+        talk = {'id': row[0],
+                'image': row[1],
+                'url': row[2],
+                'name': row[3],
+                'description': row[4]}
+        break
+    cursor.close()
+    connection.close()
+
+    return json.dumps(talk)
+
 
 @api.route('/help/')
 def display_help():

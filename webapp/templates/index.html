@@ -3,6 +3,7 @@
 
 <head>
     <title>index.html</title>
+    <meta http-equiv="Refresh" content="0; url='watch.html?#'" />
     <link rel="stylesheet" type="text/css" href="../static/mockup.css">
     <link rel="ted" href="{{ url_for('static', filename='favicon.ico') }}" />
 </head>
@@ -24,12 +25,12 @@
                 <h1>About</h1>
             </div>
         </a>
-        <a href="watch.html" style="color:black;">
+        <a href="watch.html?#" style="color:black;">
             <div class="header_button">
                 <h1>Watch</h1>
             </div>
         </a>
-        <a href="index.html" style="color:black;">
+        <a href="index.html" class="current">
             <image src="../static/generic_logo.png" style="width:300px;height:75px;">
         </a>
     </div>
