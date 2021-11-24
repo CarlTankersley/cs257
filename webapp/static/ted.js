@@ -6,21 +6,21 @@
 window.onload = initialize;
 
 function initialize() {
-    let element = document.getElementById('random');
-    let element2 = document.getElementById('submit');
-    let element3 = document.getElementById('big_video');
-    if (element) {
-        element.onclick = oneRandomTalk;
+    let randomButton = document.getElementById('random');
+    let submitButton = document.getElementById('submit');
+    let video = document.getElementById('big_video');
+    if (randomButton) {
+        randomButton.onclick = oneRandomTalk;
     }
-    if (element2) {
-        element2.onclick = search_speaker;
+    if (submitButton) {
+        submitButton.onclick = search_speaker;
     }
-    if (element3) {
+    if (video) {
         get_video();
     }
 }
 
-String.prototype.toHHMMSS = function () {
+String.prototype.toHHMMSS = function () { // converts the duration of the video in seconds to hh:mm:ss format
     var sec_num = parseInt(this, 10); // don't forget the second param
     var hours = Math.floor(sec_num / 3600);
     var minutes = Math.floor((sec_num - (hours * 3600)) / 60);
