@@ -6,11 +6,11 @@
 window.onload = initialize;
 
 function initialize() {
-    let element = document.getElementById('random_speaker_button');
+    let element = document.getElementById('random');
     let element2 = document.getElementById('submit');
     let element3 = document.getElementById('big_video');
     if (element) {
-        element.onclick = onRandomSpeakerButton;
+        element.onclick = oneRandomTalk;
     }
     if (element2) {
         element2.onclick = search_speaker;
@@ -18,6 +18,20 @@ function initialize() {
     if (element3) {
         get_video();
     }
+}
+
+String.prototype.toHHMMSS = function () {
+    var sec_num = parseInt(this, 10); // don't forget the second param
+    var hours = Math.floor(sec_num / 3600);
+    var minutes = Math.floor((sec_num - (hours * 3600)) / 60);
+    var seconds = sec_num - (hours * 3600) - (minutes * 60);
+
+    if (hours < 10) { hours = "0" + hours; }
+    if (minutes < 10) { minutes = "0" + minutes; }
+    if (seconds < 10) { seconds = "0" + seconds; }
+    if (minutes + hours < 1) { return '00:' + seconds; }
+    if (hours < 1) { return minutes + ':' + seconds; }
+    return hours + ':' + minutes + ':' + seconds;
 }
 
 function getAPIBaseURL() {
@@ -28,20 +42,32 @@ function getAPIBaseURL() {
     return baseURL;
 }
 
-function onRandomSpeakerButton() {
-    let url = getAPIBaseURL() + '/random/';
+// function onRandomSpeakerButton() {
+//     let url = getAPIBaseURL() + '/random/';
 
+//     fetch(url, { method: 'get' })
+//         .then((response) => response.json())
+//         .then(function (speaker) {
+//             let str = '';
+//             str += '<h2>' + speaker['name']
+//                 + ': ' + speaker['title']
+//                 + '</h2>';
+//             let newHTML = document.getElementById('random_speaker');
+//             if (newHTML) {
+//                 newHTML.innerHTML = str;
+//             }
+//         })
+//         .catch(function (error) {
+//             console.log(error);
+//         });
+// }
+
+function oneRandomTalk() {
+    let url = getAPIBaseURL() + '/search_videos/?sort=random';
     fetch(url, { method: 'get' })
         .then((response) => response.json())
-        .then(function (speaker) {
-            let str = '';
-            str += '<h2>' + speaker['name']
-                + ': ' + speaker['title']
-                + '</h2>';
-            let newHTML = document.getElementById('random_speaker');
-            if (newHTML) {
-                newHTML.innerHTML = str;
-            }
+        .then(function (speakers) {
+            window.location.href = 'video.html?id=' + speakers[0]["id"];
         })
         .catch(function (error) {
             console.log(error);
@@ -50,17 +76,27 @@ function onRandomSpeakerButton() {
 
 function search_speaker() {
     let input = document.getElementById('speaker_search').value;
+    let secondaryInput = document.getElementById('sorter').value;
+    console.log("secondary=" + secondaryInput)
     let url = getAPIBaseURL() + '/search_videos/?search=' + input;
+    if (secondaryInput) {
+        url += '&sort="' + secondaryInput + '"'
+        console.log(url)
+    }
     fetch(url, { method: 'get' })
         .then((response) => response.json())
         .then(function (speakers) {
             let newHTML = '';
             for (let i = 0; i < speakers.length; i++) {
                 let speaker = speakers[i];
+                let duration = String(speaker["duration"]);
+                console.log(duration);
+                duration = duration.toHHMMSS();
+                console.log(duration);
                 newHTML += '<div class="video">'
                     + '<div class="imageWrapper">'
                     + '<a href="video.html?id=' + speaker["id"] + '"><img '
-                    + 'src="' + encodeURIComponent(speaker["image"]).replace(/\s+/g, '') + '" '
+                    + 'src="' + speaker["image"] + '" '
                     + 'class="" title="" alt="video"></a>'
                     + '</div>'
                     + '<div class="videoSidebar">'
@@ -73,9 +109,11 @@ function search_speaker() {
                     + speaker["description"]
                     + '</div></div>'
                     + '<div class="metadata">'
-                    + '</div></div></div>';
+                    + '<div class="runtime">'
+                    + duration
+                    + '</div></div></div></div>';
             }
-            newHTML = decodeURIComponent(newHTML);
+            // newHTML = decodeURIComponent(newHTML);
             let videos = document.getElementById('video_box');
             if (videos) {
                 videos.innerHTML = newHTML;
@@ -98,8 +136,8 @@ function get_video() {
             let newHTML = '';
             newHTML += '<div class="bigImageWrapper">'
                 + ' <div class="bigImageContainer">'
-                + ' <a href="' + encodeURIComponent(talk_id["image"]).replace(/\s+/g, '') + '"><img'
-                + ' src="' + encodeURIComponent(talk_id["url"]).replace(/\s+/g, '') + '"'
+                + ' <a href="' + encodeURIComponent(talk_id["url"]).replace(/\s+/g, '') + '"><img'
+                + ' src="' + encodeURIComponent(talk_id["image"]).replace(/\s+/g, '') + '"'
                 + ' class="" title="" alt="video"><div class="middle">Watch it on TED.com!</div></a>'
                 + ' </div>'
                 + ' </div>'

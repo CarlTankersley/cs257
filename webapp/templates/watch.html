@@ -9,11 +9,11 @@
 
 <body>
     <div id="header">
-        <a href="create.html" style="color:black;">
+        <!-- <a href="create.html" style="color:black;">
             <div class="header_button">
                 <h1>Create</h1>
             </div>
-        </a>
+        </a> -->
         <a href="careers.html" style="color:black;">
             <div class="header_button">
                 <h1>Careers</h1>
@@ -52,7 +52,7 @@
                 <div class="blank_bonus_button">
                     <form class="form" role="speaker_search">
                         <input id="speaker_search" type="text" placeholder="Speaker">
-                        <button type="submit" id="submit">Search</button>
+                        <button type="button" id="submit">Search</button>
                     </form>
                 </div>
             </a>
@@ -64,23 +64,24 @@
         <div class="bonus_button_wrapper">
             <a style="color:black;">
                 <div class="dropdown">
-                    <button class="dropbtn">
-                        <h2>Sort by</h2>
-                    </button>
-                    <div class="dropdown-content">
-                        <a href="#">Title (A-Z)</a>
-                        <a href="#">Title (Z-A)</a>
-                        <a href="#">Duration (low to high)</a>
-                        <a href="#">Duration (high to low)</a>
-                    </div>
+                    <form class="form" role="sorter">
+                        <select class="dropbtn" id="sorter">
+                            <option>Name (A-Z)</option>
+                            <option>Name (Z-A)</option>
+                            <option>Duration (low to high)</option>
+                            <option>Duration (high to low)</option>
+                        </select>
+                    </form>
                 </div>
             </a>
         </div>
         <div class="bonus_button_wrapper">
             <a href="" style="color:black;">
-                <button class="bonus_button">
-                    <h2>Random</h2>
-                </button>
+                <form class="form" role="random">
+                    <button type="button" class="bonus_button" id="random">
+                        <h2>Random</h2>
+                    </button>
+                </form>
             </a>
         </div>
     </div>
